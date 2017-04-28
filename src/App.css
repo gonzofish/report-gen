@@ -1,24 +1,28 @@
 .App {
-  text-align: center;
+  padding: 5px;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+.report-form {
+  display: none;
+}
+.report-form.visible {
+  display: block;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+.report-form table {
+  border: 0;
+  border-collapse: collapse;
+  width: 100%;
 }
 
-.App-intro {
-  font-size: large;
+.report-form table td {
+  vertical-align: top;
+  border: 1px solid gray;
+  border-left: 0;
+  border-right: 0;
+  padding: 5px;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.report-form table td.report-form-input {
+  width: 40%;
 }

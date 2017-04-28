@@ -4,16 +4,14 @@ import {
     Link
 } from 'react-router-dom';
 
-const NavBar = ({ reports }) => {
-    return (
-        <div>
-            {reports.map((report) =>
-                <span><Link key={report.id} to={`/report/${report.id}`}>{report.title}</Link> |</span>
-            )}
-            <Link to="/">New</Link>
-        </div>
-    );
-};
+const NavBar = ({ reports }) => (
+    <div>
+        {reports.map((report) =>
+            <span key={report.id}><Link to={`/report/${report.id}`}>{report.title}</Link> |</span>
+        )}
+        <Link to="/">New</Link>
+    </div>
+);
 
 const mapReportIdsToProps = ({ reports }) => ({
     reports

@@ -21,7 +21,7 @@ class App extends Component {
 
             <Switch>
               <Route exact path="/" component={Launch} />
-              <Route path="/report" component={Reports} />
+              <Route path="/report/:reportId?" component={Reports} />
             </Switch>
           </div>
         </Router>

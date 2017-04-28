@@ -9,13 +9,21 @@ const addReport = (dispatch, payload) => dispatch({
     type: CREATE_REPORT
 });
 
-const Launch = ({ dispatch, history }) => (
+const Launch = ({ dispatch, history, templates }) => (
     <div>
-        <button onClick={() => {
-            addReport(dispatch, 'spot');
-            history.push('/report');
-        }}>Spot</button>
+        {templates.map((template) =>
+            <button key={template.id} onClick={() => {
+                addReport(dispatch, template.id);
+                history.push('/report');
+            }}>{template.title}</button>
+        )}
     </div>
 );
 
-export default withRouter(connect()(Launch));
+const mapTemplatesToProps = ({ templates }) => {
+    return { templates };
+};
+
+export default withRouter(connect(
+    mapTemplatesToProps
+)(Launch));
