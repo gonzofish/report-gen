@@ -5,10 +5,23 @@ import { withRouter } from 'react-router-dom';
 import ReportForm from '../report-form/ReportForm.js';
 
 class Reports extends Component {
+    state = {
+        reports: []
+    };
+
     componentWillMount() {
-        if (this.props.reports.length === 0) {
+        const reports = this.props.reports;
+
+        if (reports.length === 0) {
             this.props.history.push('/');
+        } else if (this.state.reports.length < reports.length) {
+            // new report
+            this.props.history.push(`/report/${reports[reports.length - 1].id}`);
         }
+
+        this.setState(() => ({
+            reports
+        }));
     }
 
     render() {

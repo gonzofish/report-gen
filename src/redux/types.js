@@ -1,1 +1,2 @@
 export const CREATE_REPORT = 'CREATE_REPORT';
+export const DELETE_REPORT = 'DELETE_REPORT';
