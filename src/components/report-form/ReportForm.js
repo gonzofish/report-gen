@@ -42,7 +42,7 @@ const ReportForm = ({ report, visible }) => {
                             <td colSpan={columns - fact.groups.length + adjustment} rowSpan={rowspan}>
                                 {fact.label}
                             </td>
-                            {adjustment == 1 && rowspan === 1 ? <td className="report-form-input">Input for {fact.name}</td> : null}
+                            {adjustment === 1 && rowspan === 1 ? <td className="report-form-input">Input for {fact.name}</td> : null}
                         </tr>
                     );
                 })}
