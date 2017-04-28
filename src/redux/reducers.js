@@ -11,7 +11,7 @@ export const initialState = {
 };
 
 const generateId = (reports) => {
-    const ids = report.map((report) => report.id);
+    const ids = reports.map((report) => report.id);
     let id = 0;
 
     while (ids.indexOf(id) !== -1) {
